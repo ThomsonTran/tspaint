@@ -17,12 +17,6 @@ function CanvasContainer() {
     const [tool, setTool] = useState(0);
     const [gridSize, setGridSize] = useState(100);
 
-    const props = {
-        color,
-        tool,
-        gridSize,
-    };
-
     return (
         <div className="container">
             <div className="tools">
@@ -42,7 +36,13 @@ function CanvasContainer() {
                     onChange={(value) => setTool(value)}
                 />
             </div>
-            <SettingsContext.Provider value={props}>
+            <SettingsContext.Provider
+                value={{
+                    color,
+                    tool,
+                    gridSize,
+                }}
+            >
                 <Canvas height={height} width={width} />
             </SettingsContext.Provider>
         </div>
