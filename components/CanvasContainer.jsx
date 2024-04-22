@@ -1,9 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 
 import ColorPicker from "./ColorPicker";
 import CanvasSizePicker from "./CanvasSizePicker";
-import GridSizePicker from "./GridSizePicker";
 import ToolPicker from "./ToolPicker";
 
 import Canvas from "./canvas/Canvas";
@@ -15,21 +14,17 @@ function CanvasContainer() {
     const [width, setWidth] = useState("800");
     const [height, setHeight] = useState("800");
     const [tool, setTool] = useState(0);
-    const [gridSize, setGridSize] = useState(100);
+    const gridSize = 100;
 
     return (
         <div className="container">
-            <div className="tools">
+            <div className="flex justify-evenly">
                 <ColorPicker currentValue={color} setColor={setColor} />
                 <CanvasSizePicker
                     currentHeight={height}
                     currentWidth={width}
                     changeHeight={setHeight}
                     changeWidth={setWidth}
-                />
-                <GridSizePicker
-                    currentValue={gridSize}
-                    setGridSize={setGridSize}
                 />
                 <ToolPicker
                     currentValue={tool}

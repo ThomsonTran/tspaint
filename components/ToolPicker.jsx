@@ -6,11 +6,11 @@ function ToolPicker(props) {
     const { currentValue } = props;
     return (
         <div
-            className="tools-container"
+            className="flex flex-col"
             onChange={(e) => props.onChange(e.target.value)}
         >
             {toolNames.map((element, index) => (
-                <div key={index}>
+                <div key={index} className="flex gap-2">
                     <input
                         type="radio"
                         id={element}

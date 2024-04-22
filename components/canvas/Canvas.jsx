@@ -16,10 +16,6 @@ const Canvas = ({ width, height }) => {
     const { gridSize } = useContext(SettingsContext);
 
     useEffect(() => {
-        if (!canvasRef.current) {
-            return;
-        }
-
         const canvas = canvasRef.current;
         const context = canvas.getContext("2d");
         context.fillStyle = "#FFFFFF";
